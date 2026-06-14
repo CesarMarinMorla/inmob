@@ -2,21 +2,23 @@ spring:
   application:
     name: backend
   datasource:
-    url: jdbc:mysql://localhost:3306/inmob_db
-    username: root
-    password: 44084576Zoe!
+    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/inmob_db}
+    username: ${SPRING_DATASOURCE_USERNAME:root}
+    password: ${SPRING_DATASOURCE_PASSWORD:}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     hibernate:
       ddl-auto: update
-    show-sql: true
+    show-sql: false
     properties:
       hibernate:
-        format_sql: true
         dialect: org.hibernate.dialect.MySQLDialect
   security:
     oauth2:
       resourceserver:
         jwt:
-          issuer-uri: https://dev-clfi6t361gyrqlsw.us.auth0.com/
-          audiences: https://inmob2-api
+          issuer-uri: ${AUTH0_ISSUER_URI:https://dev-clfi6t361gyrqlsw.us.auth0.com/}
+          audiences: ${AUTH0_AUDIENCE:https://inmob2-api}
+
+server:
+  port: ${PORT:8080}
