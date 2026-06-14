@@ -3,13 +3,14 @@
   "private": true,
   "version": "0.0.1",
   "type": "module",
-  "scripts": {
+ "scripts": {
     "test": "vitest",
     "build": "vite build",
-    "dev": "vite","ci": "npm install --legacy-peer-deps && npm run build"
+    "dev": "vite",
+    "ci": "npm install --legacy-peer-deps && npm run build"
   },
   "dependencies": {
-    "@auth0/auth0-react": "^2.16.2",
+    "@auth0/auth0-react": "2.16.2",
     "@emotion/react": "11.14.0",
     "@emotion/styled": "11.14.1",
     "@mui/icons-material": "7.3.5",
